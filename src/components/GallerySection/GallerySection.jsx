@@ -16,7 +16,7 @@ const GallerySection = () => {
                         <div data-aos="fade-up-right" data-aos-duration="1000">
                             <img
                                 className="img-fluid rounded-3 img-border-custom"
-                                src="https://t4.ftcdn.net/jpg/00/65/59/31/240_F_65593151_wNDwyzYbqBbh5ExMMCjyr7Ghr9sq1h3o.jpg"
+                                src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/017ce4170938201.Y3JvcCwxMjAwLDkzOCwwLDI2NA.png"
                                 alt="kid with lego"
                             />
                             <div className="text-white">
@@ -48,7 +48,7 @@ const GallerySection = () => {
                         >
                             <img
                                 className="img-fluid rounded-3 img-border-custom"
-                                src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/017ce4170938201.Y3JvcCwxMjAwLDkzOCwwLDI2NA.png"
+                                src="https://t4.ftcdn.net/jpg/00/65/59/31/240_F_65593151_wNDwyzYbqBbh5ExMMCjyr7Ghr9sq1h3o.jpg"
                                 alt="kid with lego"
                             />
                             <div className="text-white">

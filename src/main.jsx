@@ -11,6 +11,7 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import Instructors from './components/Instructors/Instructors';
 import Classes from './components/Classes/Classes';
 import Dashboard from './components/Dashboard/Dashboard';
+import Login from './components/Login/Login';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
   {
     path: 'dashboard',
     element: <Dashboard></Dashboard>
+  },
+  {
+    path: 'login',
+    element: <Login></Login>
   },
   {
     path: '*',
