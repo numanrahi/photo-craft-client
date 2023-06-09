@@ -8,11 +8,28 @@ import {
 import Main from './Layout/Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageNotFound from './components/PageNotFound/PageNotFound';
+import Instructors from './components/Instructors/Instructors';
+import Classes from './components/Classes/Classes';
+import Dashboard from './components/Dashboard/Dashboard';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    children: [
+      {
+        path: 'instructors',
+        element: <Instructors></Instructors>
+      },
+      {
+        path: 'classes',
+        element: <Classes></Classes>
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>
+      }
+    ]
   },
   {
     path: '*',
