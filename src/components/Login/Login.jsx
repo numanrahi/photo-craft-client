@@ -44,7 +44,7 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" {...register('password')} required placeholder="Password" />
                         </Form.Group>
-                        <div className='text-center'>Dont have an account? Please <Link to="/register">Register</Link></div>
+                        <div className='text-center'>Dont have an account? Please <Link to="/register" className='text-danger text-decoration-none'>Register</Link></div>
                         <br />
                         <Button className="w-100 bg-color my-3" type="submit">
                             Login
