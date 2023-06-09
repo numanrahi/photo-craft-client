@@ -16,7 +16,7 @@ const GallerySection = () => {
                         <div data-aos="fade-up-right" data-aos-duration="1000">
                             <img
                                 className="img-fluid rounded-3 img-border-custom"
-                                src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/017ce4170938201.Y3JvcCwxMjAwLDkzOCwwLDI2NA.png"
+                                src="https://i.postimg.cc/0jpKMtfq/reinhart-julian-Wx-M465o-M4j4-unsplash.jpg"
                                 alt="kid with lego"
                             />
                             <div className="text-white">
@@ -32,7 +32,7 @@ const GallerySection = () => {
                         >
                             <img
                                 className="img-fluid rounded-3 img-border-custom"
-                                src="https://t4.ftcdn.net/jpg/00/67/03/93/240_F_67039341_a82VkpuX9nAuUkIMdP6l7CL1ZR2dpgOF.jpg"
+                                src="https://i.postimg.cc/vHgSj5mw/robert-lukeman-RBcxo9-AU-U-unsplash.jpg"
                                 alt="kid with lego"
                             />
                             <div className="text-white">
@@ -60,7 +60,7 @@ const GallerySection = () => {
                         <div data-aos="zoom-out" data-aos-duration="1000">
                             <img
                                 className="img-fluid rounded-3 img-border-custom"
-                                src="https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/6650b1170929915.6468eb3ae71a7.jpg"
+                                src="https://i.postimg.cc/GtsJMJxM/bailey-zindel-NRQV-h-BF10-M-unsplash.jpg"
                                 alt="kid with lego"
                             />
                             <div className="text-white">

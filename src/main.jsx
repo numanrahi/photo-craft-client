@@ -12,6 +12,7 @@ import Instructors from './components/Instructors/Instructors';
 import Classes from './components/Classes/Classes';
 import Dashboard from './components/Dashboard/Dashboard';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
   {
     path: 'login',
     element: <Login></Login>
+  },
+  {
+    path: 'register',
+    element: <Register></Register>
   },
   {
     path: '*',
