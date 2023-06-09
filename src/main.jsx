@@ -15,21 +15,19 @@ import Dashboard from './components/Dashboard/Dashboard';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>,
-    children: [
-      {
-        path: 'instructors',
-        element: <Instructors></Instructors>
-      },
-      {
-        path: 'classes',
-        element: <Classes></Classes>
-      },
-      {
-        path: 'dashboard',
-        element: <Dashboard></Dashboard>
-      }
-    ]
+    element: <Main></Main>
+  },
+  {
+    path: 'instructors',
+    element: <Instructors></Instructors>
+  },
+  {
+    path: 'classes',
+    element: <Classes></Classes>
+  },
+  {
+    path: 'dashboard',
+    element: <Dashboard></Dashboard>
   },
   {
     path: '*',

@@ -21,6 +21,11 @@ body {
   min-height: 100vh;
 }
 
+.bg-color {
+  background: rgb(78, 72, 147) !important;
+  background: linear-gradient(90deg, rgba(78, 72, 147, 1) 35%, rgba(207, 96, 237, 1) 91%) !important;
+}
+
 .text-two {
   font-family: 'Tangerine', cursive !important;
 }
