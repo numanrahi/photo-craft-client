@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Karla', sans-serif !important;
   margin: 0 auto;
   min-width: 320px;
   min-height: 100vh;
