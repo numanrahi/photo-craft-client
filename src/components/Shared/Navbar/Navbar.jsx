@@ -12,7 +12,7 @@ const Navbar = () => {
                 <Link to="/dashboard" className='px-3 text-decoration-none text-white'>Dashboard</Link>
             </div>
             <div>
-                <Link to="/login"><button className='px-3 py-2 btn btn-primary rounded-lg'>Login</button></Link>
+                <Link to="/login"><button className='px-4 btn bg-color text-white rounded-lg'>Login</button></Link>
             </div>
 
         </div>

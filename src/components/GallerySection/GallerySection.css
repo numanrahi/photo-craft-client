@@ -1,0 +1,5 @@
+.img-border-custom {
+    border: 5px solid white;
+    transition: .5s;
+    width: 750px;
+}
