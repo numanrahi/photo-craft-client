@@ -1,27 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
 
     const { register, handleSubmit } = useForm();
+    const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/"
 
     const onSubmit = (data) => {
         const email = data.email;
         const password = data.password;
         console.log(email, password);
 
-        // loginUser(email, password)
-        //     .then(() => {
-        //         toast("Welcome Back !!");
-        //         navigate(from, { replace: true });
-        //     })
-        //     .catch((error) => {
-        //         toast.error(error.message);
-        //     });
+        signIn(email, password)
+            .then(() => {
+                toast("Welcome Back !!");
+                navigate(from, { replace: true });
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            });
     };
 
     return (
