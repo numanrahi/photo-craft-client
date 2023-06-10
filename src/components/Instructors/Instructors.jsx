@@ -9,7 +9,6 @@ const Instructors = () => {
             <Navbar></Navbar>
             <h2>Instructors page</h2>
             <div>
-                
                 <Card style={{ width: '18rem' }}>
                     <Card.Img variant="top" src="holder.js/100px180" />
                     <Card.Body>

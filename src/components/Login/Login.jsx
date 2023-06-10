@@ -6,6 +6,8 @@ import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-toastify';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import './Login.css'
 
 const Login = () => {
 
@@ -80,7 +82,7 @@ const Login = () => {
                             <Form.Control type="email" {...register('email')} required placeholder="Enter email" />
                         </Form.Group>
                         {/* _______ */}
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
                             <div className="password-input-container">
                                 <Form.Control
@@ -96,6 +98,24 @@ const Login = () => {
                                     {showPassword ?
                                         <div className='btn bg-color text-white mt-2'>Hide Password</div> :
                                         <div className='btn bg-color text-white mt-2'>Show Password</div>}
+                                </span>
+                            </div>
+                        </Form.Group> */}
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <div className="password-input-container">
+                                <Form.Control
+                                    type={showPassword ? 'text' : 'password'}
+                                    {...register('password')}
+                                    required
+                                    placeholder="Password"
+                                />
+                                <span className="password-toggle-icon" onClick={togglePasswordVisibility}>
+                                    {showPassword ? (
+                                        <FiEyeOff className="password-icon" />
+                                    ) : (
+                                        <FiEye className="password-icon" />
+                                    )}
                                 </span>
                             </div>
                         </Form.Group>

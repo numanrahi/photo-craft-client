@@ -1,0 +1,68 @@
+[
+    {
+        "id": "1",
+        "name": "Portrait Photography",
+        "image": "https://i.postimg.cc/5tmYdHGF/My-project-5.jpg",
+        "instructor_name": "Rahi",
+        "instructor_email": "arahi2994@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    },
+    {
+        "id": "2",
+        "name": "Street Photography",
+        "image": "https://i.postimg.cc/rFCL9StW/My-project-4.jpg",
+        "instructor_name": "Rahi",
+        "instructor_email": "arahi2994@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    },
+    {
+        "id": "13",
+        "name": "Sports Photography",
+        "image": "https://i.postimg.cc/8PGSW-F33/My-project.jpg",
+        "instructor_name": "Rahi",
+        "instructor_email": "arahi2994@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    },
+    {
+        "id": "4",
+        "name": "Indoor Photography",
+        "image": "https://i.postimg.cc/xdDyT2qK/My-project-1.jpg",
+        "instructor_name": "Rahi",
+        "instructor_email": "arahi2994@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "denied"
+    },
+    {
+        "id": "5",
+        "name": "Automobile Photography",
+        "image": "https://i.postimg.cc/KvYbc1Wy/My-project-2.jpg",
+        "instructor_name": "Rahi",
+        "instructor_email": "arahi2994@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "pending"
+    },
+    {
+        "id": "6",
+        "name": "Wildlife Photography",
+        "image": "https://i.postimg.cc/tgbpjBQB/My-project-3.jpg",
+        "instructor_name": "Rahi",
+        "instructor_email": "arahi2994@gmail.com",
+        "students": "0",
+        "seats": "10",
+        "price": "25000",
+        "status": "approved"
+    }
+]

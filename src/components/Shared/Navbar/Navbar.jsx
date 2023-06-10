@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Tooltip } from 'react-tooltip';
-import {BsPersonCircle} from 'react-icons/bs';
+import { BsPersonCircle } from 'react-icons/bs';
 import './Navbar.css'
 
 const Navbar = () => {
