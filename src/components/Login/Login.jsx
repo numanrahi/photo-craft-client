@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 const Login = () => {
 
     const { register, handleSubmit } = useForm();
-    const { signIn } = useContext(AuthContext);
+    const { googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/"
@@ -29,6 +29,30 @@ const Login = () => {
                 toast.error(error.message);
             });
     };
+
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+
+                const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
+                // TODO: Connect to the server
+                // fetch('http://localhost:5000/users', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(saveUser)
+                // })
+                    .then(res => res.json())
+                    .then(() => {
+                        console.log('from', from);
+                        navigate(from, { replace: true } || '/')
+                    })
+            })
+    }
 
     return (
         <div>
@@ -50,11 +74,15 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" {...register('password')} required placeholder="Password" />
                         </Form.Group>
-                        <div className='text-center'>Dont have an account? Please <Link to="/register" className='text-danger text-decoration-none'>Register</Link></div>
                         <br />
                         <Button className="w-100 bg-color my-3" type="submit">
                             Login
                         </Button>
+                        <div className='text-center'>--------- or ----------</div>
+                        <Button onClick={handleGoogleSignIn} className="w-100 bg-color my-3" type="submit">
+                            Login with Google
+                        </Button>
+                        <div className='text-center'>Dont have an account? Please <Link to="/register" className='text-danger text-decoration-none'>Register</Link></div>
                     </Form>
                 </div>
             </div>

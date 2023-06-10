@@ -178,7 +178,7 @@ const Register = () => {
                                     <div>
                                         <div>
                                             <button
-                                                className="w-100 bg-dark border-0 text-white py-2 fs-5 mt-3"
+                                                className="w-100 bg-color border-0 text-white py-2 fs-5 mt-3"
                                                 type="submit"
                                             >
                                                 Register
@@ -194,7 +194,7 @@ const Register = () => {
                                                 <div
                                                     // onClick={handleGoogleSignIn}
                                                     type="button"
-                                                    className="btn rounded-0 text-white bg-dark w-100 py-2 fs-5 mt-3"
+                                                    className="btn rounded-0 text-white bg-color w-100 py-2 fs-5 mt-3"
                                                 >
                                                     Register with Google
                                                 </div>

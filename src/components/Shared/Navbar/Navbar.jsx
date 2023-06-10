@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Tooltip } from 'react-tooltip';
 import {BsPersonCircle} from 'react-icons/bs';
+import './Navbar.css'
 
 const Navbar = () => {
 
@@ -37,7 +38,7 @@ const Navbar = () => {
                                 <img
                                     referrerPolicy="no-referrer"
                                     className="profile-img"
-                                    src={URL}
+                                    src={user.photoURL}
                                     alt="profile_photo"
                                 />
                             </div>
@@ -54,7 +55,6 @@ const Navbar = () => {
                         <div>
                             <Link
                                 onClick={signOut}
-                                // className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3"
                                 className='px-4 btn bg-color text-white rounded-lg'
                             >
                                 Logout
@@ -66,17 +66,12 @@ const Navbar = () => {
                         <Link
                             to="/login"
                             className='px-4 btn bg-color text-white rounded-lg'
-                            // className="text-decoration-none btn text-white btn btn-outline-secondary rounded-0 px-5 border-3"
                         >
                             Login
                         </Link>
                     </div>
                 )}
             </div>
-
-            {/* <div>
-                <Link to="/login"><button className='px-4 btn bg-color text-white rounded-lg'>Login</button></Link>
-            </div> */}
 
         </div>
 
