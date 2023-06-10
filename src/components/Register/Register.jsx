@@ -1,84 +1,90 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+import { AuthContext } from '../../providers/AuthProvider';
 
 
 
 const Register = () => {
-    
-    const { register, handleSubmit } = useForm();
+
+    const { register, handleSubmit, } = useForm();
+    const { createUser, user, auth } = useContext(AuthContext)
+
+    const navigate = useNavigate();
 
     const onSubmit = (data) => {
-		const name = data.name;
-		const email = data.email;
-		const password = data.password;
-		const confirm = data.confirmPassword;
-		const url = data.url;
+        const name = data.name;
+        const email = data.email;
+        const password = data.password;
+        const confirm = data.confirmPassword;
+        const url = data.url;
         console.log(name, email, password, confirm, url);
-		// if (data.password.length < 6) {
-		// 	toast.warning("Password should be at least 6 characters long.");
-		// 	return;
-		// }
-		// if (!/[A-Z]/.test(data.password)) {
-		// 	toast.warning(
-		// 		"Password should contain at least one capital letter."
-		// 	);
-		// 	return;
-		// }
-		// if (!/[^a-zA-Z0-9]/.test(data.password)) {
-		// 	toast.warning(
-		// 		"Password should contain at least one special character."
-		// 	);
-		// 	return;
-		// } else if (password !== confirm) {
-		// 	toast.error(
-		// 		"Your confirming password is wrong . Please try again."
-		// 	);
-		// 	return;
-		// } else {
-		// 	createUser(email, password)
-		// 		.then(() => {
-		// 			const savedUser = {
-		// 				name: name,
-		// 				email: email,
-		// 				image: url,
-		// 				role: "user",
-		// 			};
-		// 			updateUserProfile(name, url)
-		// 				.then(() => {
-		// 					fetch("http://localhost:5000/users", {
-		// 						method: "POST",
-		// 						headers: {
-		// 							"content-type": "application/json",
-		// 						},
-		// 						body: JSON.stringify(savedUser),
-		// 					})
-		// 						.then((res) => res.json())
-		// 						.then((data) => {
-		// 							if (data.insertedID) {
-		// 								toast("Account created successfully");
-		// 								navigate("/home");
-		// 							}
-		// 						});
-		// 				})
-		// 				.catch((err) => {
-		// 					toast.error(err.message);
-		// 				});
-		// 		})
-		// 		.catch((error) => {
-		// 			toast.error(error.message);
-		// 		});
-		// 	return;
-		// }
-	};
+        if (data.password.length < 6) {
+            toast.warning("Password should be at least 6 characters long.");
+            return;
+        }
+        else if (!/[A-Z]/.test(data.password)) {
+            toast.warning(
+                "Password should contain at least one capital letter."
+            );
+            return;
+        }
+        else if (!/[^a-zA-Z0-9]/.test(data.password)) {
+            toast.warning(
+                "Password should contain at least one special character."
+            );
+            return;
+        } else if (password !== confirm) {
+            toast.error(
+                "Your confirming password is wrong . Please try again."
+            );
+            return;
+        }
+        else {
+            createUser(email, password)
+                .then(result => {
+                    const savedUser = {
+                        name: name,
+                        email: email,
+                        image: url,
+                        role: "user",
+                    }
+                    // updateUserProfile(name, url)
+                    // 	.then(() => {
+                    // 		fetch("http://localhost:5000/users", {
+                    // 			method: "POST",
+                    // 			headers: {
+                    // 				"content-type": "application/json",
+                    // 			},
+                    // 			body: JSON.stringify(savedUser),
+                    // 		})
+                    // 			.then((res) => res.json())
+                    // 			.then((data) => {
+                    // 				if (data.insertedID) {
+                    // 					toast("Account created successfully");
+                    // 				}
+                    // 			});
+                    // 	})
+                    // 	.catch((err) => {
+                    // 		toast.error(err.message);
+                    // 	});
+                    navigate("/");
+                    console.log(savedUser);
+                })
+                .catch((error) => {
+                    toast.error(error.message);
+                })
+            return;
+        }
+    };
 
     return (
         <div>
             <Navbar></Navbar>
-            {/* <div className='display-5 text-center'>Register your account</div>
-            <hr className='w-50 mx-auto text-secondary' /> */}
             <div>
                 <div className="bg-photo">
                     <div className="col-md-7 col-11 mx-auto">
