@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -46,13 +46,23 @@ const Login = () => {
                 //     },
                 //     body: JSON.stringify(saveUser)
                 // })
-                    .then(res => res.json())
-                    .then(() => {
-                        console.log('from', from);
-                        navigate(from, { replace: true } || '/')
-                    })
+                // .then(res => res.json())
+                // .then(() => {
+                //     console.log('from', from);
+                //     navigate(from, { replace: true } || '/')
+                // })
+                navigate(from, { replace: true } || '/')
             })
     }
+
+    // _______________________
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+    };
+
 
     return (
         <div>
@@ -69,11 +79,31 @@ const Login = () => {
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" {...register('email')} required placeholder="Enter email" />
                         </Form.Group>
-
+                        {/* _______ */}
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
-                            <Form.Control type="password" {...register('password')} required placeholder="Password" />
+                            <div className="password-input-container">
+                                <Form.Control
+                                    type={showPassword ? 'text' : 'password'}
+                                    {...register('password')}
+                                    required
+                                    placeholder="Password"
+                                />
+                                <span
+                                    className={`password-toggle-icon`}
+                                    onClick={togglePasswordVisibility}
+                                >
+                                    {showPassword ?
+                                        <div className='btn bg-color text-white mt-2'>Hide Password</div> :
+                                        <div className='btn bg-color text-white mt-2'>Show Password</div>}
+                                </span>
+                            </div>
                         </Form.Group>
+
+                        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" {...register('password')} required placeholder="Password" />
+                        </Form.Group> */}
                         <br />
                         <Button className="w-100 bg-color my-3" type="submit">
                             Login

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import { AuthContext } from '../../providers/AuthProvider';
@@ -12,9 +12,11 @@ import { AuthContext } from '../../providers/AuthProvider';
 const Register = () => {
 
     const { register, handleSubmit, } = useForm();
-    const { createUser, user, auth } = useContext(AuthContext)
+    const { createUser, googleSignIn, user, auth } = useContext(AuthContext)
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/"
 
     const onSubmit = (data) => {
         const name = data.name;
@@ -81,6 +83,30 @@ const Register = () => {
             return;
         }
     };
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+
+                const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
+                // TODO: Connect to the server
+                // fetch('http://localhost:5000/users', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(saveUser)
+                // })
+                // .then(res => res.json())
+                // .then(() => {
+                //     console.log('from', from);
+                //     navigate(from, { replace: true } || '/')
+                // })
+                navigate(from, { replace: true } || '/')
+            })
+    }
 
     return (
         <div>
@@ -192,7 +218,7 @@ const Register = () => {
                                         <div>
                                             <div>
                                                 <div
-                                                    // onClick={handleGoogleSignIn}
+                                                    onClick={handleGoogleSignIn}
                                                     type="button"
                                                     className="btn rounded-0 text-white bg-color w-100 py-2 fs-5 mt-3"
                                                 >
