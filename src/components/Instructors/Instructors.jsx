@@ -1,26 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
-import { Card } from 'react-bootstrap';
+import InstructorCard from '../InstructorCard/InstructorCard';
 
 const Instructors = () => {
+
+    const [instructors, setInstructors] = useState([]);
+
+    useEffect(() => {
+        fetch('user.json')
+            .then(res => res.json())
+            .then(data => setInstructors(data))
+    }, [])
+    console.log(instructors);
+
     return (
         <div>
-            <Navbar></Navbar>
-            <h2>Instructors page</h2>
-            <div>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src="holder.js/100px180" />
-                    <Card.Body>
-                        <Card.Title>Name</Card.Title>
-                        <Card.Text>
-                            Email
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
+            <div className="bg-char">
+                <Navbar></Navbar>
+            </div>
+            <div className="mx-auto" style={{ maxWidth: "1200px" }}>
+                <div>
+                    <div className="display-4 text-center my-5 text-char">
+                        Our Honorable hard working instructors
+                    </div>
+                </div>
+                <div className="row mb-5">
+                    {instructors.map((data) => (
+                        <InstructorCard
+                            data={data}
+                            key={data._id}
+                        ></InstructorCard>
+                    ))}
+                </div>
             </div>
             <Footer></Footer>
         </div>
+
     );
 };
 

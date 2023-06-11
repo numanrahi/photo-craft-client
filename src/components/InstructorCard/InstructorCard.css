@@ -1,0 +1,9 @@
+.i-card{
+    border: 2px solid gray;
+    padding: 70px 50px;
+    border-radius: 20px;
+}
+.custom-img{
+    width: 200px;
+    border-radius: 20px;
+}
