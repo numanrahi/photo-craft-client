@@ -39,12 +39,12 @@
         "name": "David Taylor",
         "email": "davidtaylor7@example.com",
         "image": "https://i.postimg.cc/Z5J416Th/My-project-7.jpg",
-        "role": "instructor"
+        "role": "admin"
     },
     {
         "name": "Olivia Clark",
         "email": "oliviaclark8@example.com",
         "image": "https://i.postimg.cc/Kj9Dxnds/My-project-8.jpg",
-        "role": "instructor"
+        "role": "user"
     }
 ]

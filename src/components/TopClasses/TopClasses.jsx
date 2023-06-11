@@ -41,31 +41,6 @@ const TopClasses = () => {
                     }
                 </div>
             </div>
-
-            {/* <div className="row align-items-center card-toy p-5 rounded-3 mx-3">
-                <div className="col-11 col-md-6 mx-auto">
-                    {classes.map((single) => (
-                        <div key={single.id} className="top-card">
-                            <div className="d-flex align-items-center justify-content-between px-2">
-                                <div className="text-two display-5 pt-2">
-                                    {single.name}
-                                </div>
-                                <div className="text-two display-6">
-                                    {single.student} students
-                                </div>
-                            </div>
-                            <div className='col-11 col-md-6 mx-auto'>
-                                <img
-                                    src={single.image}
-                                    alt="photo"
-                                    className="img-fluid rounded-3"
-                                />
-                            </div>
-
-                        </div>
-                    ))}
-                </div>
-            </div> */}
         </div>
     );
 };

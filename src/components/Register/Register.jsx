@@ -4,15 +4,12 @@ import Navbar from '../Shared/Navbar/Navbar';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
 import { AuthContext } from '../../providers/AuthProvider';
-
-
 
 const Register = () => {
 
     const { register, handleSubmit, } = useForm();
-    const { createUser, googleSignIn, user, auth } = useContext(AuthContext)
+    const { createUser, googleSignIn, user, auth, updateUserProfile } = useContext(AuthContext)
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,7 +21,6 @@ const Register = () => {
         const password = data.password;
         const confirm = data.confirmPassword;
         const url = data.url;
-        console.log(name, email, password, confirm, url);
         if (data.password.length < 6) {
             toast.warning("Password should be at least 6 characters long.");
             return;
@@ -55,25 +51,25 @@ const Register = () => {
                         image: url,
                         role: "user",
                     }
-                    // updateUserProfile(name, url)
-                    // 	.then(() => {
-                    // 		fetch("http://localhost:5000/users", {
-                    // 			method: "POST",
-                    // 			headers: {
-                    // 				"content-type": "application/json",
-                    // 			},
-                    // 			body: JSON.stringify(savedUser),
-                    // 		})
-                    // 			.then((res) => res.json())
-                    // 			.then((data) => {
-                    // 				if (data.insertedID) {
-                    // 					toast("Account created successfully");
-                    // 				}
-                    // 			});
-                    // 	})
-                    // 	.catch((err) => {
-                    // 		toast.error(err.message);
-                    // 	});
+                    updateUserProfile(name, url)
+                    	.then(() => {
+                    		fetch("http://localhost:5000/users", {
+                    			method: "POST",
+                    			headers: {
+                    				"content-type": "application/json",
+                    			},
+                    			body: JSON.stringify(savedUser),
+                    		})
+                    			.then((res) => res.json())
+                    			.then((data) => {
+                    				if (data.insertedID) {
+                    					toast("Account created successfully");
+                    				}
+                    			});
+                    	})
+                    	.catch((err) => {
+                    		toast.error(err.message);
+                    	});
                     navigate("/");
                     console.log(savedUser);
                 })
