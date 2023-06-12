@@ -88,18 +88,18 @@ const Register = () => {
 
                 const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
                 // TODO: Connect to the server
-                // fetch('http://localhost:5000/users', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(saveUser)
-                // })
-                // .then(res => res.json())
-                // .then(() => {
-                //     console.log('from', from);
-                //     navigate(from, { replace: true } || '/')
-                // })
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                .then(res => res.json())
+                .then(() => {
+                    console.log('from', from);
+                    navigate(from, { replace: true } || '/')
+                })
                 navigate(from, { replace: true } || '/')
             })
     }

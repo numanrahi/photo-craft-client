@@ -12,7 +12,7 @@ import './Login.css'
 const Login = () => {
 
     const { register, handleSubmit } = useForm();
-    const { googleSignIn } = useContext(AuthContext);
+    const { googleSignIn, signIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || "/"
@@ -41,23 +41,22 @@ const Login = () => {
 
                 const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
                 // TODO: Connect to the server
-                // fetch('http://localhost:5000/users', {
-                //     method: 'POST',
-                //     headers: {
-                //         'content-type': 'application/json'
-                //     },
-                //     body: JSON.stringify(saveUser)
-                // })
-                // .then(res => res.json())
-                // .then(() => {
-                //     console.log('from', from);
-                //     navigate(from, { replace: true } || '/')
-                // })
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        console.log('from', from);
+                        navigate(from, { replace: true } || '/')
+                    })
                 navigate(from, { replace: true } || '/')
             })
     }
 
-    // _______________________
 
     const [showPassword, setShowPassword] = useState(false);
 
@@ -81,26 +80,6 @@ const Login = () => {
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" {...register('email')} required placeholder="Enter email" />
                         </Form.Group>
-                        {/* _______ */}
-                        {/* <Form.Group className="mb-3" controlId="formBasicPassword">
-                            <Form.Label>Password</Form.Label>
-                            <div className="password-input-container">
-                                <Form.Control
-                                    type={showPassword ? 'text' : 'password'}
-                                    {...register('password')}
-                                    required
-                                    placeholder="Password"
-                                />
-                                <span
-                                    className={`password-toggle-icon`}
-                                    onClick={togglePasswordVisibility}
-                                >
-                                    {showPassword ?
-                                        <div className='btn bg-color text-white mt-2'>Hide Password</div> :
-                                        <div className='btn bg-color text-white mt-2'>Show Password</div>}
-                                </span>
-                            </div>
-                        </Form.Group> */}
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label>Password</Form.Label>
                             <div className="password-input-container">

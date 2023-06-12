@@ -16,9 +16,7 @@ const Instructors = () => {
 
     return (
         <div>
-            <div className="bg-char">
-                <Navbar></Navbar>
-            </div>
+            <Navbar></Navbar>
             <div className="mx-auto" style={{ maxWidth: "1200px" }}>
                 <div>
                     <div className="display-4 text-center my-5 text-char">
