@@ -1,18 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
-import useAdmin from "../../hooks/useAdmin";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { RoleContext } from "../../providers/RoleProvider";
 
 const Dashboard = () => {
-  const [isAdmin] = useAdmin();
+  const { isAdmin, isInstructor, isStudent } = useContext(RoleContext);
   return (
     <div>
       <Navbar></Navbar>
       {/* Side bar section */}
-      <div className="w-100 row">
-        <div className="col-4 bg-brown text-white p-5 height-full">
-          <div className="display-2 text-center text-cursive pb-5">
+      <div className="w-100 my-3 ms-3 rounded-4 row">
+        <div className="col-4 bg-dark text-white p-5 height-full">
+          <div className="fs-2 text-center fw-light pb-5">
             {isAdmin
               ? "Admin "
               : isInstructor
@@ -22,7 +22,7 @@ const Dashboard = () => {
               : ""}
             Dashboard
           </div>
-          {/************************************************************************************/}
+          {/* ********************************************************************************** */}
           <div>
             {isAdmin ? (
               <div>
@@ -88,7 +88,7 @@ const Dashboard = () => {
               "Please wait for a moment till data loads . Sorry for the inconvenience .."
             )}
           </div>
-          {/************************************************************************************/}
+          {/* ********************************************************************************** */}
         </div>
         <div className="col-8">
           <Outlet></Outlet>

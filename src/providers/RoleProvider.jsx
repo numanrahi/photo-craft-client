@@ -14,7 +14,7 @@ export const RoleProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetch("https://euphoria-server.vercel.app/all-users")
+    fetch("http://localhost:5000/all-users")
       .then((res) => res.json())
       .then((data) => {
         const exact_user = data.filter(

@@ -8,10 +8,10 @@ import './GallerySection.css'
 const GallerySection = () => {
     return (
         <div className='bg-color'>
-            <div className='text-two display-2 text-center text-white my-3 py-3'>Some award winning photographs of our students</div>
+            <div className='text-two display-2 text-center text-white my-3 py-3 px-4'>Some award winning photographs of our students</div>
             {/* gallery section */}
             <div style={{ maxWidth: "1200px" }} className="mx-auto pb-5">
-                <div className="row">
+                <div className="row w-100 mx-auto">
                     <div className="col-11 col-md-6 mx-auto p-3">
                         <div data-aos="fade-up-right" data-aos-duration="1000">
                             <img
