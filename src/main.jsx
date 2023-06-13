@@ -16,6 +16,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { RoleProvider } from "./providers/RoleProvider";
 import PrivateRoute from "./Routes/PrivateRoute";
+import AdminMangeClasses from "./components/pages/AdminManageClasses/AdminManageClasses";
+import AdminManageUsers from "./components/pages/AdminManageUsers/AdminManageUsers";
+import AdminRoute from "./Routes/AdminRoute";
+import InstructorsAddClass from "./components/pages/InstructorsAddClass/InstructorsAddClass";
 
 const queryClient = new QueryClient();
 
@@ -39,7 +43,28 @@ const router = createBrowserRouter([
         <Dashboard></Dashboard>
       </PrivateRoute>
     ),
-    children: [],
+    children: [
+      {
+        path: "admin-manage-classes",
+        element: (
+          <AdminRoute>
+            <AdminMangeClasses></AdminMangeClasses>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "admin-manage-users",
+        element: (
+          <AdminRoute>
+            <AdminManageUsers></AdminManageUsers>,
+          </AdminRoute>
+        ),
+      },
+      {
+        path: 'instructor-add-a-class',
+        element: <InstructorsAddClass></InstructorsAddClass>
+      }
+    ],
   },
   {
     path: "login",

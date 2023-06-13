@@ -1,14 +1,14 @@
-import React, {  useContext } from "react";
+import React, { Children, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import useAdmin from "../hooks/useAdmin";
 import { Navigate, useLocation } from "react-router-dom";
+import useInstructor from "../hooks/useInstructor";
 
-const AdminRoute = ({children}) => {
+const InstructorRoute = ({children}) => {
   const { user, loading } = useContext(AuthContext);
-  const { isAdmin, isAdminLoading } = useAdmin();
+  const { isInstructor, isInstructorLoading } = useInstructor();
   const location = useLocation();
 
-  if (loading || isAdminLoading) {
+  if (loading || isInstructorLoading) {
     return (
       <div>
         {/* TODO : loading spinner */}
@@ -16,10 +16,11 @@ const AdminRoute = ({children}) => {
       </div>
     );
   }
-  if ( isAdmin) {
+  if (isInstructor) {
+    // console.log('children',children);
     return children;
   }
   return <Navigate to="/" state={{ from: location }} replace></Navigate>;
 };
 
-export default AdminRoute;
+export default InstructorRoute;

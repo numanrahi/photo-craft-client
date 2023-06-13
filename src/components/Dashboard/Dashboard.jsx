@@ -3,9 +3,12 @@ import Navbar from "../Shared/Navbar/Navbar";
 import Footer from "../Shared/Footer/Footer";
 import { Link, Outlet } from "react-router-dom";
 import { RoleContext } from "../../providers/RoleProvider";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Dashboard = () => {
   const { isAdmin, isInstructor, isStudent } = useContext(RoleContext);
+  const { user } = useContext(AuthContext);
+  console.log(isAdmin, user);
   return (
     <div>
       <Navbar></Navbar>
