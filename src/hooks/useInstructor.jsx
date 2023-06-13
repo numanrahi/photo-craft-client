@@ -11,7 +11,7 @@ const useInstructor = () => {
     enabled: !loading,
     queryFn: async () => {
       const res = await axios.get("/instructors", {
-        baseURL: "http://localhost:5000",
+        baseURL: "https://assgignment-12-server.vercel.app",
       });
       const instructors = res.data;
       const matchingInstructor = instructors.find(
