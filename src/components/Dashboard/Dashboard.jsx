@@ -8,7 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 const Dashboard = () => {
   const { isAdmin, isInstructor, isStudent } = useContext(RoleContext);
   const { user } = useContext(AuthContext);
-  console.log(isInstructor, user);
+  // console.log(isInstructor, user);
   return (
     <div>
       <Navbar></Navbar>

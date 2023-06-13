@@ -4,6 +4,7 @@ import Footer from "../components/Shared/Footer/Footer";
 import SwiperBanner from "../components/SwiperBanner/SwiperBanner";
 import GallerySection from "../components/GallerySection/GallerySection";
 import TopClasses from "../components/TopClasses/TopClasses";
+import TopInstructors from "../components/TopInstructors/TopInstructors";
 
 const Main = () => {
   return (
@@ -12,6 +13,7 @@ const Main = () => {
       <SwiperBanner></SwiperBanner>
       <GallerySection></GallerySection>
       <TopClasses></TopClasses>
+      <TopInstructors></TopInstructors>
       <Footer></Footer>
     </div>
   );

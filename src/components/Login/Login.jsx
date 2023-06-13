@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import { FaGoogle } from "react-icons/fa";
 import "./Login.css";
 
 const Login = () => {
@@ -123,7 +124,7 @@ const Login = () => {
               className="w-100 bg-color my-3"
               type="submit"
             >
-              Login with Google
+              Login with Google <FaGoogle className="ms-1"></FaGoogle>
             </Button>
             <div className="text-center">
               Dont have an account? Please{" "}

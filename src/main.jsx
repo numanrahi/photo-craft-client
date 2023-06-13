@@ -22,6 +22,7 @@ import AdminRoute from "./Routes/AdminRoute";
 import InstructorClass from "./components/pages/InstructorClasses/InstructorClasses";
 import InstructorRoute from "./Routes/IntructorsRoute";
 import AddAClass from "./components/pages/AddAClass/AddAClass";
+import MyEnrolledClasses from "./components/pages/InstructorClasses/MyEnrolledClasses/MyEnrolledClasses";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
         path: "instructor-add-a-class",
         element: <AddAClass></AddAClass>,
       },
+      {
+        path: 'user-enrolled-classes',
+        element: <MyEnrolledClasses></MyEnrolledClasses>
+      }
     ],
   },
   {

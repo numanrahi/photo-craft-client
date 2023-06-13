@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../providers/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Register = () => {
 
@@ -218,7 +219,7 @@ const Register = () => {
                                                     type="button"
                                                     className="btn rounded-0 text-white bg-color w-100 py-2 fs-5 mt-3"
                                                 >
-                                                    Register with Google
+                                                    Register with Google <FaGoogle className="ms-1"></FaGoogle>
                                                 </div>
                                             </div>
                                         </div>
