@@ -4,7 +4,7 @@ const TopClasses = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://assgignment-12-server.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         // Sort the classes based on the number of students

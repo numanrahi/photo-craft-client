@@ -40,7 +40,7 @@ const AdminSingleClass = ({ single, setTest }) => {
 
   const db_data = { id: _id, status: newStatus };
 
-  fetch("http://localhost:5000/classes", {
+  fetch("https://assgignment-12-server.vercel.app/classes", {
     method: "PATCH",
     headers: {
       "content-type": "application/json",

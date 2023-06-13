@@ -7,7 +7,7 @@ const InstructorClass = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:5000/classes")
+    fetch("https://assgignment-12-server.vercel.app/classes")
       .then((res) => res.json())
       .then((data) => {
         const filtered_data = data.filter(

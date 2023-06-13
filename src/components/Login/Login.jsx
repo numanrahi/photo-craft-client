@@ -44,7 +44,7 @@ const Login = () => {
         role: role,
       };
       // TODO: Connect to the server
-      fetch("http://localhost:5000/all-users", {
+      fetch("https://assgignment-12-server.vercel.app/all-users", {
         method: "POST",
         headers: {
           "content-type": "application/json",

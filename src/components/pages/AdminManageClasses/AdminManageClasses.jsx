@@ -6,7 +6,7 @@ const AdminManageClasses = () => {
 	const [test, setTest] = useState(false);
 
 	useEffect(() => {
-		fetch("http://localhost:5000/classes")
+		fetch("https://assgignment-12-server.vercel.app/classes")
 			.then((res) => res.json())
 			.then((data) => setAll_classes(data));
 	}, [all_class, test]);
