@@ -1,11 +1,9 @@
 import React, { Children, useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
-import useAdmin from "../hooks/useAdmin";
 import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({children}) => {
   const { user, loading } = useContext(AuthContext);
-  const { isAdmin, isAdminLoading } = useAdmin();
   const location = useLocation();
 
   if (loading) {

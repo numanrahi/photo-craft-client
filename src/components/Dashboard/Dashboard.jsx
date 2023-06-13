@@ -10,8 +10,8 @@ const Dashboard = () => {
     <div>
       <Navbar></Navbar>
       {/* Side bar section */}
-      <div className="w-100 my-3 ms-3 rounded-4 row">
-        <div className="col-4 bg-dark text-white p-5 height-full">
+      <div className="w-100 my-3 ms-3 row">
+        <div className="col-4 bg-dark rounded-5 text-white p-5 height-full">
           <div className="fs-2 text-center fw-light pb-5">
             {isAdmin
               ? "Admin "
@@ -30,7 +30,7 @@ const Dashboard = () => {
                   to="/dashboard/admin-manage-classes"
                   className="text-decoration-none text-dark"
                 >
-                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5">
+                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5 rounded-4">
                     Manage Classes
                   </div>
                 </Link>
@@ -39,7 +39,7 @@ const Dashboard = () => {
                   to="/dashboard/admin-manage-users"
                   className="text-decoration-none text-dark"
                 >
-                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5">
+                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5 rounded-4">
                     Manage User
                   </div>
                 </Link>
@@ -50,7 +50,7 @@ const Dashboard = () => {
                   to="/dashboard/instructor-add-a-class"
                   className="text-decoration-none text-dark"
                 >
-                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5">
+                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5 rounded-4">
                     Add A Class
                   </div>
                 </Link>
@@ -59,7 +59,7 @@ const Dashboard = () => {
                   to="/dashboard/instructor-classes"
                   className="text-decoration-none text-dark"
                 >
-                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5">
+                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5 rounded-4">
                     My Classes
                   </div>
                 </Link>
@@ -70,7 +70,7 @@ const Dashboard = () => {
                   to="/dashboard/user-selected-classes"
                   className="text-decoration-none text-dark"
                 >
-                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5">
+                  <div className="btn bg-white rounded-0 w-100 py-2 mb-5 rounded-4">
                     My Selected Classes
                   </div>
                 </Link>
@@ -79,7 +79,7 @@ const Dashboard = () => {
                   to="/dashboard/user-enrolled-classes"
                   className="text-decoration-none text-dark"
                 >
-                  <div className="btn bg-white rounded-0 w-100 py-2">
+                  <div className="btn bg-white rounded-0 w-100 py-2 rounded-4">
                     My Enrolled Classes
                   </div>
                 </Link>
