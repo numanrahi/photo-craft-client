@@ -36,7 +36,7 @@ export const RoleProvider = ({ children }) => {
     } else if (userRole == "admin") {
       setIsAdmin(true);
     }
-  }, [userRole]);
+  }, [userRole , db_user]);
 
   return (
     <RoleContext.Provider

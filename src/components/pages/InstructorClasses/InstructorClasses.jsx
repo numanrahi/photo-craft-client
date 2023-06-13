@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import SingleInstructorClass from "./SingleInstructorClass";
 import { AuthContext } from "../../../providers/AuthProvider";
 
-const InstructorsAddClass = () => {
+const InstructorClass = () => {
   const [all_class, setAll_classes] = useState([]);
   const { user } = useContext(AuthContext);
 
@@ -38,4 +38,4 @@ const InstructorsAddClass = () => {
   );
 };
 
-export default InstructorsAddClass;
+export default InstructorClass;

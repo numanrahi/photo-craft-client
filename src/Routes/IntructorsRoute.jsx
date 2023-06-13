@@ -16,7 +16,7 @@ const InstructorRoute = ({children}) => {
       </div>
     );
   }
-  if (isInstructor) {
+  else if (isInstructor) {
     // console.log('children',children);
     return children;
   }
