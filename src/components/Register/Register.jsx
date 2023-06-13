@@ -53,7 +53,7 @@ const Register = () => {
                     }
                     updateUserProfile(name, url)
                     	.then(() => {
-                    		fetch("http://localhost:5000/users", {
+                    		fetch("http://localhost:5000/all-users", {
                     			method: "POST",
                     			headers: {
                     				"content-type": "application/json",
@@ -88,7 +88,7 @@ const Register = () => {
 
                 const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
                 // TODO: Connect to the server
-                fetch('http://localhost:5000/users', {
+                fetch('http://localhost:5000/all-users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
