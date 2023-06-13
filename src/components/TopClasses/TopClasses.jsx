@@ -3,11 +3,24 @@ import React, { useEffect, useState } from 'react';
 const TopClasses = () => {
     const [classes, setClasses] = useState([]);
 
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/classes')
+    //         .then(res => res.json())
+    //         .then(data => setClasses(data))
+    // }, [])
+
     useEffect(() => {
-        fetch('classes.json')
+        fetch('http://localhost:5000/classes')
             .then(res => res.json())
-            .then(data => setClasses(data))
+            .then(data => {
+                // Sort the classes based on the number of students
+                const sortedClasses = data.sort((a, b) => b.students - a.students);
+                // Take only the top 6 classes
+                const top6Classes = sortedClasses.slice(0, 6);
+                setClasses(top6Classes);
+            })
     }, [])
+
     console.log(classes);
     return (
         <div className="mx-auto mb-5 w-100" style={{ maxWidth: "1200px" }}>
@@ -26,7 +39,7 @@ const TopClasses = () => {
                                     {single.name}
                                 </div>
                                 <div className="text-two display-6">
-                                    {single.student} students
+                                    {single.students} students
                                 </div>
                             </div>
                             <div>
