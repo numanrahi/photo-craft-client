@@ -21,6 +21,7 @@ import AdminManageUsers from "./components/pages/AdminManageUsers/AdminManageUse
 import AdminRoute from "./Routes/AdminRoute";
 import InstructorClass from "./components/pages/InstructorClasses/InstructorClasses";
 import InstructorRoute from "./Routes/IntructorsRoute";
+import AddAClass from "./components/pages/AddAClass/AddAClass";
 
 const queryClient = new QueryClient();
 
@@ -48,9 +49,7 @@ const router = createBrowserRouter([
       {
         path: "admin-manage-classes",
         element: (
-          <AdminRoute>
             <AdminMangeClasses></AdminMangeClasses>
-          </AdminRoute>
         ),
       },
       {
@@ -67,6 +66,10 @@ const router = createBrowserRouter([
             <InstructorClass></InstructorClass>
         ),
       },
+      {
+        path:'instructor-add-a-class',
+        element:<AddAClass></AddAClass>
+      }
     ],
   },
   {
