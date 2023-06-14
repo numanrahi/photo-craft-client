@@ -51,6 +51,7 @@ const Register = () => {
                         email: email,
                         image: url,
                         role: "user",
+                        
                     }
                     updateUserProfile(name, url)
                     	.then(() => {
